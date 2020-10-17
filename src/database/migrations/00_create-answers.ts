@@ -1,15 +1,14 @@
 import Knex from 'knex'
 
 export async function up(knex: Knex) {
-    return knex.schema.createTable('users', table => {
+    return knex.schema.createTable('answers', table => {
         table.increments('id').primary();
-        table.string('name').notNullable();
-        table.string('lastname').notNullable();
-        table.string('email').notNullable();
-        table.string('password').notNullable();
-        table.string('avatar');
-        table.string('whatsapp');
-        table.string('bio');
+        table.integer('id_quiz').notNullable();
+        table.string('nomeColaborador').notNullable();
+        table.string('candPrefeito').notNullable();
+        table.string('governoKiko').notNullable();
+        table.string('candPrefKiko').notNullable();
+        table.string('querConhecer').notNullable();
         table.timestamp('created_at')
             .defaultTo(knex.raw('CURRENT_TIMESTAMP'))
             .notNullable();
@@ -18,5 +17,5 @@ export async function up(knex: Knex) {
 
 export async function down(knex: Knex) {
     // Utilizado caso de algo de errado
-    return knex.schema.dropTable('users');
+    return knex.schema.dropTable('answers');
 }
