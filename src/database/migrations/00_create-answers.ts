@@ -3,7 +3,7 @@ import Knex from 'knex'
 export async function up(knex: Knex) {
     return knex.schema.createTable('answers', table => {
         table.increments('id').primary();
-        table.string('id_quiz');
+        table.string('id_quiz').notNullable();
         table.string('nomeColaborador').notNullable();
         table.string('candPrefeito').notNullable();
         table.string('governoKiko').notNullable();
