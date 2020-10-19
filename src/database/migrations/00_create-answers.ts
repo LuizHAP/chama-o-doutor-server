@@ -8,7 +8,7 @@ export async function up(knex: Knex) {
         table.string('candPrefeito').notNullable();
         table.string('governoKiko').notNullable();
         table.string('candPrefKiko').notNullable();
-        table.string('querConhecer').notNullable();
+        table.string('querConhecer');
         table.timestamp('created_at')
             .defaultTo(knex.raw('CURRENT_TIMESTAMP'))
             .notNullable();
