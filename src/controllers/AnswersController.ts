@@ -4,10 +4,10 @@ import db from '../database/connection';
 export default class AnswersController {
     async create(req: Request, res: Response) {
         try {
-            const { id_quiz, nomeColaborador, candPrefeito, governoKiko, candPrefKiko, querConhecer } = req.body;
+            const { id_quiz, nomeColaborador, candPrefeito, governoKiko, candPrefKiko, querConhecer, candidatosKiko } = req.body;
 
             await db('answers').insert({
-                id_quiz, nomeColaborador, candPrefeito, governoKiko, candPrefKiko, querConhecer
+                id_quiz, nomeColaborador, candPrefeito, governoKiko, candPrefKiko, querConhecer, candidatosKiko
             })
         } catch (e) {
             console.log(e);

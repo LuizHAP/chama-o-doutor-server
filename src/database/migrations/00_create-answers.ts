@@ -9,6 +9,7 @@ export async function up(knex: Knex) {
         table.string('governoKiko').notNullable();
         table.string('candPrefKiko').notNullable();
         table.string('querConhecer');
+        table.string('candidatosKiko');
         table.timestamp('created_at')
             .defaultTo(knex.raw('CURRENT_TIMESTAMP'))
             .notNullable();
